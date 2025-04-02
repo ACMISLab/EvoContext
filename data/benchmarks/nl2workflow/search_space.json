@@ -1,0 +1,299 @@
+[
+    {
+        "algorithm": "KNN",
+        "task_type": "classification",
+        "search_space": {
+            "n_neighbors": {
+                "_type": "randint",
+                "_value": [
+                    1,
+                    100
+                ]
+            },
+            "weights": {
+                "_type": "choice",
+                "_value": [
+                    "uniform",
+                    "distance"
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            },
+            "metric": {
+                "_type": "choice",
+                "_value": [
+                    "euclidean",
+                    "manhattan",
+                    "chebyshev"
+                ],
+                "_label": [
+                    0,
+                    1,
+                    2
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "Random Forest",
+        "task_type": "classification",
+        "search_space": {
+            "n_estimators": {
+                "_type": "randint",
+                "_value": [
+                    1,
+                    100
+                ]
+            },
+            "max_features": {
+                "_type": "uniform",
+                "_value": [
+                    0.1,
+                    1
+                ]
+            },
+            "max_depth": {
+                "_type": "randint",
+                "_value": [
+                    5,
+                    15
+                ]
+            },
+            "min_samples_split": {
+                "_type": "randint",
+                "_value": [
+                    3,
+                    10
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "AdaBoost",
+        "task_type": "classification",
+        "search_space": {
+            "n_estimators": {
+                "_type": "randint",
+                "_value": [
+                    1,
+                    1000
+                ]
+            },
+            "learning_rate": {
+                "_type": "loguniform",
+                "_value": [
+                    1e-05,
+                    1.0
+                ]
+            },
+            "algorithm": {
+                "_type": "choice",
+                "_value": [
+                    "SAMME.R",
+                    "SAMME"
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "LightGBM",
+        "task_type": "classification",
+        "search_space": {
+            "boosting_type": {
+                "_type": "choice",
+                "_value": [
+                    "gbdt",
+                    "dart",
+                    "goss",
+                    "rf"
+                ],
+                "_label": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "n_estimators": {
+                "_type": "randint",
+                "_value": [
+                    3,
+                    100
+                ]
+            },
+            "learning_rate": {
+                "_type": "loguniform",
+                "_value": [
+                    1e-05,
+                    1.0
+                ]
+            },
+            "max_depth_check": {
+                "_type": "choice",
+                "_value": [
+                    true,
+                    false
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            },
+            "num_leaves_check": {
+                "_type": "choice",
+                "_value": [
+                    true,
+                    false
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "Logistic Regression",
+        "task_type": "classification",
+        "search_space": {
+            "penalty": {
+                "_type": "choice",
+                "_value": [
+                    "l1",
+                    "l2"
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            },
+            "C": {
+                "_type": "uniform",
+                "_value": [
+                    0.001,
+                    1000
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "SVM",
+        "task_type": "classification",
+        "search_space": {
+            "svm_type": {
+                "_type": "choice",
+                "_value": [
+                    0,
+                    1
+                ],
+                "_label": [
+                    0,
+                    1
+                ]
+            },
+            "kernel": {
+                "_type": "choice",
+                "_value": [
+                    "poly",
+                    "linear",
+                    "rbf",
+                    "sigmoid"
+                ],
+                "_label": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "tol": {
+                "_type": "uniform",
+                "_value": [
+                    0.001,
+                    1
+                ]
+            }
+        }
+    },
+    {
+        "algorithm": "XGBoost",
+        "task_type": "classification",
+        "search_space": {
+            "booster": {
+                "_type": "choice",
+                "_value": [
+                    "gbtree",
+                    "dart",
+                    "gblinear"
+                ],
+                "_label": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "learning_rate": {
+                "_type": "uniform",
+                "_value": [
+                    0.001,
+                    1
+                ]
+            },
+            "gamma": {
+                "_type": "uniform",
+                "_value": [
+                    0,
+                    1000
+                ]
+            }
+        },
+        "min_child_widget": {
+            "_type": "randint",
+            "_value": [
+                1,
+                1000
+            ]
+        },
+        "max_delta_step": {
+            "_type": "uniform",
+            "_value": [
+                0.0,
+                10
+            ]
+        },
+        "subsample": {
+            "_type": "uniform",
+            "_value": [
+                0.01,
+                0.5
+            ]
+        },
+        "lambda": {
+            "_type": "uniform",
+            "_value": [
+                0.001,
+                1000
+            ]
+        },
+        "alpha": {
+            "_type": "uniform",
+            "_value": [
+                0.001,
+                1000
+            ]
+        },
+        "scale_pos_weight": {
+            "_type": "uniform",
+            "_value": [
+                0,
+                10
+            ]
+        }
+    }
+]
